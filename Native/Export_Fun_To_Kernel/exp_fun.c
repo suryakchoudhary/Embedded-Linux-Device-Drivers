@@ -4,7 +4,7 @@
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("SURYA");
 
-static int Add(int a, int b)
+int Add(int a, int b)
 {
         return (a+b);
 }
