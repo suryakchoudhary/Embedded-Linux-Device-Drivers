@@ -14,3 +14,4 @@ install:
 clean:
         make -C $(KERN) M=$(PWD) clean
         rm -rf /lib/modules/$(shell uname -r)/extra/*
+	depmod -a
