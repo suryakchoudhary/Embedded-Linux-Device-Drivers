@@ -9,11 +9,11 @@
 
 ## Thus, for new drivers, we strongly suggest that you use dynamic allocation to obtain your major device number, rather than choosing a number randomly from the ones that are currently free. In other words, your drivers should almost certainly be using alloc_chrdev_region rather than register_chrdev_region.
 
-### int register_chrdev_region(dev_t first, unsigned int count, char *name);   <linux/fs.h>
-- Searching for the sequenced device number. register_chrdev_region will be 0 if the allocatio#n was successfully performed. In case of error, a negative error code will be returned.
+- int register_chrdev_region(dev_t first, unsigned int count, char *name);   <linux/fs.h>
+    - Searching for the sequenced device number. register_chrdev_region will be 0 if the allocatio#n was successfully performed. In case of error, a negative error code will be returned.
 
-### int alloc_chrdev_region(dev_t *dev, unsigned int firstminor, unsigned int count, char *name);
-- Requesting kernel for the allocation of major number.
+- int alloc_chrdev_region(dev_t *dev, unsigned int firstminor, unsigned int count, char *name);
+    - Requesting kernel for the allocation of major number.
 
 ## void unregister_chrdev_region(dev_t first, unsigned int count);
 - Regardless of how you allocate your device numbers, you should free them when they are no longer in use.
