@@ -12,6 +12,8 @@
 
 - cat /proc/kallsyms | grep file_name
 
+- cat /proc/devices : To display Major device numbers(driver associated with device) associated with the devices.
+
 # Modprobe Commands
 
 - Step 1: make
