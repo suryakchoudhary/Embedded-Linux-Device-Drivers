@@ -14,6 +14,12 @@
 
 - cat /proc/devices : To display Major device numbers(driver associated with device) associated with the devices.
 
+- ls -al /dev/ : Device files
+
+- sudo mknod /dev/MyCharDevice c 100 0 : To create device file/node file
+
+- sudo rm mknod /dev/MyCharDevice c 100 0
+
 # Modprobe Commands
 
 - Step 1: make
@@ -29,5 +35,15 @@
 - Step 5: sudo modprobe -r file_name : This command will automatically unload all the file_name module and as well as modules on which file_name is dependent.
 
 - Sequence will be 1st all the modules will be loaded on which file_name module is dependent, all these dependent modules(module symbols) will also be loaded according to its sequence of dependency.
+
+# Character Driver Commands
+
+- Step 1: Create .ko file for kernal module and executable for user source code.
+
+- Step 2: Load the .ko file to the kernal by "sudo insmod file.ko".
+
+- Step 3: Now run the user application source code in the sudo mode by "sudo ./executable".
+
+- Step 4: Check the result either by "dmesg -c" or by "tail /var/log/syslog".
 
 
