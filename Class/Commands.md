@@ -46,4 +46,10 @@
 
 - Step 4: Check the result either by "dmesg -c" or by "tail /var/log/syslog".
 
+# Linux Commands
+
+- ls -lh : For checking file size and other details.
+
+- rm -r ditectory_name : To delete directory.
+
 
